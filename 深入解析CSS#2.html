@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --first-color: #1890ff;
+            --second-color: #e6f7ff;
+        }
+        body {
+            margin: 0;
+        }
+        .one span {
+            float: left;
+        }
+        .one {
+            padding: 1em;
+        }
+        .one .box {
+            padding: 1em;
+            border-radius: 1em;
+            background: var(--first-color);
+            color: var(--second-color);
+        }
+        .one .big {
+            font-size: 1.5em;
+            margin-left: 1em;
+        }
+        .two, .three {
+            clear: left;
+            padding: 1em 1em 0;
+        }
+        ul {
+            margin: 0;
+            padding: 0;
+            background: var(--second-color);
+            color: var(--first-color);
+            font-size: 1.5rem;
+        }
+        ul li {
+            list-style: none;
+            padding: .5em;
+        }
+        .three {
+            --first-color: #e6f7ff;
+            --second-color: #1890ff;
+        }
+    </style>
+    <script>
+        function theme() {
+            let firstColor = getComputedStyle(document.documentElement).getPropertyValue("--first-color");
+            let secondColor = getComputedStyle(document.documentElement).getPropertyValue("--second-color");
+            document.documentElement.style.setProperty("--first-color", secondColor);
+            document.documentElement.style.setProperty("--second-color", firstColor);
+        }
+    </script>
+</head>
+<body onclick="theme()">
+    <div class="one">
+        <span class="box small">small</span>
+        <span class="box big">big</span>
+    </div>
+    <div class="two">
+        <ul>
+            <li>one</li>
+            <ul>
+                <li>two</li>
+                <ul>
+                    <li>three</li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+    <div class="three">
+        <ul>
+            <li>one</li>
+            <ul>
+                <li>two</li>
+                <ul>
+                    <li>three</li>
+                </ul>
+            </ul>
+        </ul>
+    </div>
+</body>
+</html>
