@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --first-color: #1890ff;
+            --second-color: #e6f7ff;
+            box-sizing: border-box;
+        }
+        *, ::before, ::after {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            color: var(--first-color);
+        }
+        header {
+            background-color: var(--second-color);
+            margin-bottom: .5em;
+            padding: 1em;
+        }
+        header div, main div {
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .content {
+            display: flex;
+        }
+        main {
+            float: left;
+            width: 70%;
+            background-color: var(--second-color);
+        }
+        aside {
+            float: left;
+            width: calc(30% - .5em);
+            margin-left: .5em;
+            padding: 1em;
+            background-color: var(--second-color);
+        }
+        a {
+            display: block;
+            background-color: var(--first-color);
+            color: var(--second-color);
+            padding: .5em;
+            text-decoration: none;
+            text-align: center;
+        }
+        a + a {
+            margin-top: 1em;
+        }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <header>
+        <div>header</div>
+    </header>
+    <div class="content">
+        <main>
+            <div>main</div>
+        </main>
+        <aside>
+            <div>
+                <a href="">one</a>
+                <a href="">two</a>
+            </div>
+        </aside>
+    </div>
+</body>
+</html>
