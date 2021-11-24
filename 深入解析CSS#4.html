@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --first-color: #1890ff;
+            --second-color: #e6f7ff;
+            box-sizing: border-box;
+        }
+        *, ::before, ::after {
+            box-sizing: inherit;
+        }
+        body {
+            margin: 0;
+            color: var(--first-color);
+        }
+        .flex-center-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header {
+            background-color: var(--second-color);
+            margin-bottom: .5em;
+            padding: 1em;
+        }
+        header div {
+            height: 100%;
+        }
+        .media {
+            float: left;
+            width: calc(50% - .5em);
+            padding: .5em;
+            background-color: var(--second-color);
+            margin: 0 .5em .5em 0;
+        }
+        .media img {
+            float: left;
+            margin-right: .5em;
+        }
+        .media div {
+            overflow: auto;
+        }
+        .row {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+        }
+        .row::after {
+            content: "";
+            clear: both;
+            display: block;
+        }
+        [class*="column-"] {
+            float: left;
+            padding: 0 .5em;
+        }
+        [class*="column-"] .media {
+            width: 100%;
+            border: 1px solid var(--first-color);
+            white-space: nowrap;
+        }
+        [class*="column-"] .media div {
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .column-1 { width: 10%; }
+        .column-2 { width: 20%; }
+        .column-3 { width: 30%; }
+        .column-4 { width: 40%; }
+        .column-5 { width: 50%; }
+        .column-6 { width: 60%; }
+        .column-7 { width: 70%; }
+        .column-8 { width: 80%; }
+        .column-9 { width: 90%; }
+        .column-10 { width: 100%; }
+    </style>
+    <script>
+    </script>
+</head>
+<body>
+    <header>
+        <div class="flex-center-center">header</div>
+    </header>
+    <div class="content">
+        <main>
+            <div class="media">
+                <img src="./雪花.png" width="25" height="25" alt="雪花">
+                <div>my name is wqd my name is wqd my name is wqd my name is wqd my name is wqd my name is wqd my name is wqd</div>
+            </div>
+            <div class="media">
+                <img src="./雪花.png" width="25" height="25" alt="雪花">
+                <div>my name is wqd</div>
+            </div>
+            <div class="media">
+                <img src="./雪花.png" width="25" height="25" alt="雪花">
+                <div>my name is wqd</div>
+            </div>
+            <div class="media">
+                <img src="./雪花.png" width="25" height="25" alt="雪花">
+                <div>my name is wqd</div>
+            </div>
+        </main>
+    </div>
+    <div class="row">
+        <div class="column-1">
+            <div class="media">
+                <div>my name is wqd</div>
+            </div>
+        </div>
+        <div class="column-2">
+            <div class="media">
+                <div>my name is wqd</div>
+            </div>
+        </div>
+        <div class="column-3">
+            <div class="media">
+                <div>my name is wqd</div>
+            </div>
+        </div>
+        <div class="column-4">
+            <div class="media">
+                <div>my name is wqd</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
